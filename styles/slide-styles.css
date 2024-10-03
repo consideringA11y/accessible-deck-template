@@ -1,0 +1,33 @@
+.slides {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Slide styles */
+.slide {
+  text-align: center;
+  display: none; /* Initially hidden */
+  width: 100%;
+  height: 100%;
+  visibility: hidden; /* Hidden by default */
+  opacity: 0; /* Fully transparent by default */
+  transition: visibility 0s, opacity 0.5s ease-in-out; /* Transition for visibility and opacity */
+}
+
+.slide[aria-hidden="false"] {
+  display: block; /* Make the active slide visible */
+  visibility: visible; /* Ensure it's visible */
+  opacity: 1; /* Fully visible */
+}
+
+.slide[aria-hidden="true"] {
+  display: none; /* Hide the inactive slides */
+  visibility: hidden; /* Ensure hidden */
+  opacity: 0; /* Fully transparent */
+}
